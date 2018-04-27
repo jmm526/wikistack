@@ -6,7 +6,6 @@ const userRouter = require('./routes/user')
 const morgan = require("morgan");
 const layout = require('./views/layout');
 const models = require('./models');
-const main = require('./views/main')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,12 +17,12 @@ app.use('/wiki', wikiRouter);
 app.use('/user', userRouter);
 
 app.get("/", (req, res) => {
-  res.send(main());
+  res.redirect('/wiki', )
 //   res.json("Hello World");
 });
 
 const init = async () => {
-  await models.db.sync({force:true});
+  await models.db.sync({force:true});       // resets database everytime server resets
 
   const PORT = 1337;
 

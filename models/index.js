@@ -48,11 +48,11 @@ Page.beforeValidate( async (pageInstance, optionsObject) => {
     })
   }
   pageInstance.slug = tempSlug
-  console.log(dbSearch)
+//   console.log(dbSearch)
 })
 
 Page.afterCreate((pageInstance, optionsObject) => {
-  console.log('Pageinstance', pageInstance)
+//   console.log('Pageinstance', pageInstance)
 })
 
 function generateSlug (title) {
